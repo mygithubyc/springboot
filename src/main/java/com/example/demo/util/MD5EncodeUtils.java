@@ -27,11 +27,13 @@ public class MD5EncodeUtils {
 		String result = null;
 
 		try {
+			// 设置MD5加密计算方式
 			MessageDigest messageDigest = MessageDigest.getInstance("MD5");
 			byte[] byteText = text.getBytes();
 			messageDigest.digest(byteText);
 			byte[] byteResult = messageDigest.digest();
 
+			// 计算字符串byte的位运算
 			StringBuffer stringBuffer = new StringBuffer();
 			for (byte b : byteResult) {
 				int byteValue = b & 0xff;
